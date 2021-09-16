@@ -1,0 +1,23 @@
+<input [(ngModel)]="searchedWord" type="text" placeholder="enter a searched word">
+<p *ngIf="searchedWord">{{searchedWord}}</p>
+<ng-container *ngIf="movies.length>0;else noMovie" >
+  <div *ngFor="let movie of movies | movieFilter:searchedWord" class="card mb-3">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="/assets/img/{{movie.imageUrl}}" class="img-fluid rounded-start" alt="">
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h2 class="card-title">{{movie.title}}</h2>
+          <p class="card-text">{{movie.description | summary: 30}}</p>
+          <button class="btn btn-sm btn-outline-primary">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noMovie>
+  <p>selam</p>
+</ng-template> 
+
+
