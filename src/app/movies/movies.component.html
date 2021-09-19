@@ -1,4 +1,5 @@
-<input [(ngModel)]="searchedWord" type="text" placeholder="enter a searched word">
+<input [(ngModel)]="searchedWord" type="text" placeholder="enter a searched word"><br>
+<input [(ngModel)]="searchedDescription" (ngModelChange) = "modelChanged()" type="text" placeholder="enter a searched word">
 <p *ngIf="searchedWord">{{searchedWord}}</p>
 <ng-container *ngIf="movies.length>0;else noMovie" >
   <div *ngFor="let movie of movies | movieFilter:searchedWord" class="card mb-3">
@@ -11,6 +12,7 @@
           <h2 class="card-title">{{movie.title}}</h2>
           <p class="card-text">{{movie.description | summary: 30}}</p>
           <button class="btn btn-sm btn-outline-primary">Details</button>
+          <button (click)="addToList($event,movie)" class="btn btn-sm btn-primary">Add to List</button>
         </div>
       </div>
     </div>
