@@ -1,3 +1,5 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {Movie} from '../models/movie'
 import { MovieRepository } from '../models/movie.repository';
@@ -17,13 +19,12 @@ export class MoviesComponent implements OnInit {
   searchedDescription:string = ""
   selectedMovie:Movie;
 
-  constructor(private alertify:AlertifyService) {
-    this.movieRepository = new MovieRepository();
-    this.movies = this.movieRepository.getMovies();
-    this.populerMovies = this.movieRepository.getPopulerMovies();
+  constructor(private alertify:AlertifyService, private http:HttpClient) {
+ 
    }
 
   ngOnInit(): void {
+    this.http.get<Movie[]>('http://localhost:3000/movies').subscribe(data => this.movies = data);
   }
   modelChanged(){
     this.movies = this.movies.filter(movie => movie.description.includes(this.searchedDescription.toLowerCase()))
