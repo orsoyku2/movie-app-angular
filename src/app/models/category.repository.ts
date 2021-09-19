@@ -8,7 +8,7 @@ export class CategoryRepository {
       { id: 2, name: 'Aksiyon' },
       { id: 3, name: 'Korku' },
       { id: 4, name: 'Gizem-Gerilim' },
-      { id: 1, name: 'Bilim-Korku' },
+      { id: 5, name: 'Bilim-Korku' },
     ];
   }
   getCategories():Category[]{
