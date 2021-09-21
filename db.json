@@ -1,16 +1,85 @@
 {
   "movies": [
-    {"id": 1, "title": "film 1", "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste", "imageUrl": "1.jpeg","categoryId":1},
-    {"id": 2, "title": "film 2", "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste", "imageUrl": "2.jpeg","categoryId":2},
-    {"id": 3, "title": "film 3", "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste", "imageUrl": "3.jpeg","categoryId":1},
-    {"id": 4, "title": "film 4", "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste", "imageUrl": "4.jpeg","categoryId":3},
-    {"id": 5, "title": "film 5", "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste", "imageUrl": "5.jpeg","categoryId":1}
+    {
+      "id": 1,
+      "title": "film 1",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste",
+      "imageUrl": "1.jpeg",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "film 2",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste",
+      "imageUrl": "2.jpeg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "title": "film 3",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste",
+      "imageUrl": "3.jpeg",
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "title": "film 4",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste",
+      "imageUrl": "4.jpeg",
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "title": "film 5",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, deleniti eum odio illo pariatur doloremque esse veniam libero inventore non natus id voluptatum consectetur magni quos? Totam corrupti placeat iste",
+      "imageUrl": "5.jpeg",
+      "categoryId": 1
+    },
+    {
+      "id": 6,
+      "title": "Parasite",
+      "description": "The struggling Kim family sees an opportunity when the son starts working for the wealthy Park family. Soon, all of them find a way to work within the same household and start living a parasitic life.",
+      "imageUrl": "1.jpeg",
+      "categoryId": "4",
+      "isPopuler": false
+    },
+    {
+      "id": 7,
+      "title": "Filmx",
+      "description": "decriptionxx",
+      "imageUrl": "1.jepg",
+      "categoryId": "5",
+      "isPopuler": false
+    },
+    {
+      "id": 8,
+      "title": "filmy",
+      "description": "decriptionyy",
+      "imageUrl": "1.jpeg",
+      "categoryId": "5",
+      "isPopuler": false
+    }
   ],
   "categories": [
-    {"id": 1, "title":"macera"},
-    {"id": 2, "title":"romantik"},
-    {"id": 3, "title":"komedi"},
-    {"id": 4, "title":"dram"},
-    {"id": 5, "title":"savaş"}
+    {
+      "id": 1,
+      "title": "macera"
+    },
+    {
+      "id": 2,
+      "title": "romantik"
+    },
+    {
+      "id": 3,
+      "title": "komedi"
+    },
+    {
+      "id": 4,
+      "title": "dram"
+    },
+    {
+      "id": 5,
+      "title": "savaş"
+    }
   ]
 }
