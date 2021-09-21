@@ -21,4 +21,7 @@ export class MovieService {
       this.newUrl = this.url +"?id="+id;
       return this.http.get<Movie>(this.newUrl);
   }
+  createMovie(movie:Movie):Observable<Movie>{
+    return this.http.post<Movie>(this.url,movie);
+  }
 }
