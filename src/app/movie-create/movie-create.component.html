@@ -1,28 +1,28 @@
 <h1>Create Movie</h1>
 
-<form>
+<form [formGroup]="movieForm" (ngSubmit)="createMovie()">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-    <input #title type="text" class="form-control">
+    <input  formControlName="title" name="title" type="text" class="form-control" >
   </div>
 
   <div class="mb-3">
     <label for="description" class="form-label">Description</label>
-    <textarea #description class="form-control"></textarea>
+    <textarea  formControlName="description" name="description" class="form-control"></textarea>
   </div>
 
   <div class="mb-3">
     <label for="imageUrl" class="form-label">imageUrl</label>
-    <input #imageUrl type="text" class="form-control">
+    <input formControlName="imageUrl" name="imageUrl" type="text" class="form-control">
   </div>
 
   <div class="mb-3">
     <label for="categoryId" class="form-label">category</label>
-    <select #categoryId class="form-select">
+    <select formControlName="categoryId"  name="categoryId" class="form-select">
       <option [value]="category.id" *ngFor="let category of categories">{{category.title}}</option>
     </select>
   </div>
 
-  <button class="btn btn-primary" (click)="createMovie(title.value,description.value,imageUrl.value,categoryId.value)" >Create</button>
+  <button type="submit" class="btn btn-primary" >Create</button>
 
 </form>
