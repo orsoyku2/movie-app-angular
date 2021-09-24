@@ -1,6 +1,6 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { Category } from '../models/category';
@@ -8,6 +8,7 @@ import { Movie } from '../models/movie';
 import { AlertifyService } from '../services/alertify.service';
 import { CategoryService } from '../services/category.service';
 import { MovieService } from '../services/movie.service';
+import { ImageValidator } from '../validators/image.validator';
 
 @Component({
   selector: 'app-movie-create',
@@ -64,17 +65,27 @@ export class MovieCreateComponent implements OnInit {
 
   // }
   movieForm = new FormGroup({
-    title: new FormControl(),
+    title: new FormControl(" ",[Validators.required,Validators.minLength(5)]),
     description: new FormControl(),
-    imageUrl: new FormControl(),
+    imageUrl: new FormControl("",[Validators.required,ImageValidator.isValidExtention]),
     categoryId: new FormControl()
   })
   createMovie(){
-    console.log(this.movieForm)
-    
 
-  
+    const movie = {
+      id:0,
+      title: this.movieForm.value.title,
+      description: this.movieForm.value.description,
+      imageUrl: this.movieForm.value.imageUrl,
+      isPopuler:false,
+      categoryId: this.movieForm.value.categoryId
+    }
+    console.log(this.movieForm.valid)
+    console.log(this.movieForm.value.title)
 
-
+    this.movieService.createMovie(movie).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['/movies']);
+    })
   }
 }

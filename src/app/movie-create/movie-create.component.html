@@ -4,6 +4,10 @@
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input  formControlName="title" name="title" type="text" class="form-control" >
+    <div class="alert alert-danger" *ngIf="movieForm.get('title').invalid && movieForm.get('title').touched">
+      <p *ngIf="movieForm.get('title').errors.required">gerekli alan</p>
+      <p *ngIf="movieForm.get('title').errors.minlength">min 5 karakter girmelisiniz.</p>
+    </div>
   </div>
 
   <div class="mb-3">
@@ -14,6 +18,10 @@
   <div class="mb-3">
     <label for="imageUrl" class="form-label">imageUrl</label>
     <input formControlName="imageUrl" name="imageUrl" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="movieForm.get('imageUrl').invalid && movieForm.get('imageUrl').touched">
+      <p *ngIf="movieForm.get('imageUrl').errors.required">gerekli alan</p>
+      <p *ngIf="movieForm.get('imageUrl').errors.minlength">min 5 karakter girmelisiniz.</p>
+    </div>
   </div>
 
   <div class="mb-3">
@@ -23,6 +31,6 @@
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary" >Create</button>
+  <button [disabled]="movieForm.invalid" type="submit" class="btn btn-primary" >Create</button>
 
 </form>

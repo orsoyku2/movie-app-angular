@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { tap } from 'rxjs/operators';
 import { Movie } from '../models/movie';
 import { AlertifyService } from '../services/alertify.service';
 import { MovieService } from '../services/movie.service';
@@ -8,11 +9,11 @@ import { MovieService } from '../services/movie.service';
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css'],
-  providers:[MovieService]
+  providers: [MovieService],
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[]=[]
-  populerMovies: Movie[]=[];
+  movies: Movie[] = [];
+  populerMovies: Movie[] = [];
   searchedWord: string = '';
   searchedDescription: string = '';
   selectedMovie: Movie;
@@ -20,11 +21,16 @@ export class MoviesComponent implements OnInit {
   constructor(
     private alertify: AlertifyService,
     private movieService: MovieService,
-    private activatedRoute:ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => this.movieService.getMovies(params.id).subscribe((data)=> (this.movies = data)))
+    this.activatedRoute.params.subscribe((params) =>
+      this.movieService
+        .getMovies(params.id)
+        .pipe(tap(data => console.log("data",data)))
+        .subscribe((data) => (this.movies = data))
+    );
   }
   modelChanged() {
     this.movies = this.movies.filter((movie) =>
